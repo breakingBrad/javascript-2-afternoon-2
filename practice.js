@@ -114,8 +114,18 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray){
+  var newArray = [ [], [] ];
+  for (var i = 0; i < numbersArray.length; i++) {
+    if(numbersArray[i] % 2 === 0){
+      newArray[0].push(numbersArray[i]);
+    }
+    else newArray[1].push(numbersArray[i]);
+  }
+  return newArray;
+}
 
+divider(numbersArray); //?
 
 
 ////////// PROBLEM 7 //////////
@@ -135,7 +145,14 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(arr, val) {
+  val = getRandomArbitrary();
+  // for (var i = 0; i < arr.length; i++){
+  if (arr.indexOf(val) === -1 ){
+    return false
+  }
+  else return true
+}
 
 
 
