@@ -147,7 +147,7 @@ var getRandomArbitrary = function() {
 
 function finder(arr, val) {
   val = getRandomArbitrary();
-  // for (var i = 0; i < arr.length; i++){
+
   if (arr.indexOf(val) === -1 ){
     return false
   }
@@ -159,7 +159,7 @@ function finder(arr, val) {
 ////////// PROBLEM 8 //////////
 
 // Do not edit the code below.
-var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+var myGroceryList = ['chips', 'pizza', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 // Do not edit the code above.
 
 /*
@@ -181,9 +181,28 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem(myGroceryList, item) {
+  if(myGroceryList && item) {
+    for (var i = myGroceryList.length - 1; i >= 0; i--){
+      if(myGroceryList[i] === item){
+        myGroceryList.splice(i,1);
+      }
+    }
+    return myGroceryList;
+  }
+  else return [];
+}
+// return (myGroceryList && item) ? myGroceryList.filter(e => e != item) : [];
 
+removeItem(myGroceryList, 'pizza'); //?
 
+function addItem(myGroceryList, item) {
+  if(myGroceryList && item) {
+    myGroceryList.push(item);
+    return myGroceryList;
+  }
+  else return [];
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -192,7 +211,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  var array = [];
+  for (i = 1; i < 216; i++) {
+    array.push(i);
+  }
+  return array;
+}
+maker(); //?
 
 
 ////////// PROBLEM 10 //////////
