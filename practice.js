@@ -210,8 +210,7 @@ function addItem(myGroceryList, item) {
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
-function maker(){
+function maker() {
   var array = [];
   for (i = 1; i < 216; i++) {
     array.push(i);
@@ -233,8 +232,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
-
+function addTen(numbers) {
+  var newArray = [];
+  numbers.forEach(function(e) {
+    var elem = parseInt(e);
+    newArray.push(elem += 10);
+  }
+)
+return newArray}
+addTen(numbers); //?
 
 
 ////////// PROBLEM 11 //////////
@@ -258,9 +264,13 @@ for(var i = 0; i < num2; i++){
   Return the array which is longest.
 */
 
-//Code Here
-
-
+function longer (arr1, arr2) {
+  if (arr1.length > arr2.length){
+    return arr1;
+  }
+    else return arr2;
+}
+longer(arr1,arr2); //?
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -270,7 +280,12 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both(arr1, arr2) {
+  var newArr = arr1.filter((e) => arr2.includes(e));
+  return newArr;
+}
+
+both(arr1,arr2); //?
 
 
 
@@ -310,7 +325,8 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 
 
@@ -319,7 +335,18 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+function removeEmployeeByName (arr, val) {
+  for (var i = arr.length - 1; i >= 0; i--) {
+    if(arr[i].name  === val){
+      arr.splice(i, 1);
+    }
+  }
+}
+
+removeEmployeeByName(devMountainEmployees, 'Cahlan'); //?
+console.log(devMountainEmployees.length); //?
+
+
 
 
 
@@ -331,7 +358,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+users = [];
 
 
 
@@ -351,8 +378,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'user2',
+  email: 'user2@gmail.com',
+  password: 'letmein',
+  username: 'userDos'
+};
 
+var user3 = {
+  name: 'user3',
+  email: 'user3@gmail.com',
+  password: 'p@ssword',
+  username: 'userTres'
+};
 
+users.push(user1, user2, user3);
 
 /*
   Now you have a very common data structure. 
@@ -364,8 +404,17 @@ var user1 = {
   Once you find the particular index he's located in, delete him from the array.
 */
 
-//Code Here
+function removeUserByEmail (arr, val) {
+  for (var i = arr.length - 1; i >= 0; i--) {
+    console.log(arr[i].email);
+    if(arr[i].email  === val){
+      arr.splice(i, 1);
+    }
+  }
+}
 
+removeUserByEmail(users, 'tylermcginnis33@gmail.com'); //?
+console.log(users.length);
 
 
 /*
